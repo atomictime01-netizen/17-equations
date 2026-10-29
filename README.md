@@ -12,7 +12,15 @@ npm run build      # type-check + production build into dist/
 npm run preview    # serve the production build
 ```
 
-No accounts, API keys or external services are needed. Progress, bookmarks and settings live in the browser's local storage.
+No accounts, API keys or external services are needed.
+
+## Working offline
+
+Nothing in the site touches the internet at run time: fonts, KaTeX, Three.js and the world map data are all bundled.
+
+- **Installed copy, no connection at all:** after `npm install` (the only step that needs internet), run `npm run offline`. It builds the site and opens it from a local server.
+- **Browser offline cache:** the production build includes a service worker that caches the whole app (about 2 MB) on the first visit. After that, the site loads and runs with the network off, and supporting browsers offer to install it as an app.
+- `npm run dev` never needs a connection either, though it skips the service worker so changes always show up straight away. Progress, bookmarks and settings live in the browser's local storage.
 
 ## The experience
 
