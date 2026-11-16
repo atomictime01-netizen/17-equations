@@ -2,6 +2,10 @@
 
 An immersive, interactive journey through seventeen equations — from Pythagoras to Black–Scholes. Every equation is a small laboratory driven by a real mathematical model: change a variable and the mathematics, the numbers and the picture respond together.
 
+<img width="1503" height="808" alt="Screenshot 2026-11-06 142437" src="https://github.com/user-attachments/assets/2ccb3563-115f-40b1-9ace-280c47ddb1b1" />
+<img width="1900" height="845" alt="Screenshot 2026-11-06 142614" src="https://github.com/user-attachments/assets/36d12cf7-f202-4740-a5d8-61a4c799f4c2" />
+
+
 ## Running it
 
 ```bash
