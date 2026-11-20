@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "offline": "vite build && vite preview --open"
+    "offline": "vite build && vite preview --open",
+    "site:build": "tsc --noEmit && node scripts/build-site.mjs",
+    "site:preview": "vite preview --outDir site-dist --port 4174"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -36,5 +38,26 @@
     "vite": "^5.4.10",
     "vite-plugin-pwa": "^0.21.1",
     "vitest": "^2.1.4"
-  }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomictime01-netizen/17-equations.git"
+  },
+  "homepage": "https://atomictime01-netizen.github.io/17-equations/",
+  "bugs": {
+    "url": "https://github.com/atomictime01-netizen/17-equations/issues"
+  },
+  "keywords": [
+    "mathematics",
+    "education",
+    "interactive",
+    "simulation",
+    "physics",
+    "visualization",
+    "react",
+    "threejs",
+    "pwa",
+    "offline"
+  ]
 }
