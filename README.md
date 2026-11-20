@@ -9,8 +9,7 @@ Seventeen interactive labs, from Pythagoras to Black–Scholes. Free, offline, o
 [![License: MIT](https://img.shields.io/badge/license-MIT-0e1116)](LICENSE)
 [![CI](https://github.com/atomictime01-netizen/17-equations/actions/workflows/ci.yml/badge.svg)](https://github.com/atomictime01-netizen/17-equations/actions/workflows/ci.yml)
 [![GitHub stars](https://img.shields.io/github/stars/atomictime01-netizen/17-equations?color=f5a524&labelColor=0e1116)](https://github.com/atomictime01-netizen/17-equations/stargazers)
-<!-- TODO: replace YOUR_HANDLE with the Buy Me a Coffee username -->
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/YOUR_HANDLE)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/atomictime)
 
 [**Open the app**](https://atomictime01-netizen.github.io/17-equations/app/) · [Landing page](https://atomictime01-netizen.github.io/17-equations/) · [Pricing](https://atomictime01-netizen.github.io/17-equations/pricing.html)
 
@@ -108,7 +107,7 @@ Bug reports, fixes, clearer explanations and new experiments are welcome. Read [
 
 ## Support
 
-17 Equations is free and stays free. If it taught you something, you can [buy me a coffee](https://buymeacoffee.com/YOUR_HANDLE), or just star the repo and share it with a teacher.
+17 Equations is free and stays free. If it taught you something, you can [buy me a coffee](https://buymeacoffee.com/atomictime), or just star the repo and share it with a teacher.
 
 ## License
 
