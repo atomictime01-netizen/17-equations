@@ -7,7 +7,7 @@ import { audio } from '../core/audio';
 import { useIsMobile, useReducedMotion } from '../core/hooks';
 import { mulberry32 } from '../math/rng';
 import { Rich, Tex } from './Tex';
-import { Icon, Segmented } from './Controls';
+import { Segmented } from './Controls';
 import { Glyph } from './Glyph';
 
 export function Universe({ onEnter }: { onEnter: (id: string, x?: number, y?: number) => void }) {
@@ -122,9 +122,6 @@ export function Universe({ onEnter }: { onEnter: (id: string, x?: number, y?: nu
             <span className="uc-prog">
               {doneOf(focusEq)}/{focusEq.challenges.length} experiments
             </span>
-            <button type="button" className="btn btn-primary" onClick={() => onEnter(focusEq.id, window.innerWidth / 2, window.innerHeight / 2)}>
-              Enter {Icon.next}
-            </button>
           </div>
         </aside>
       )}
