@@ -7,6 +7,7 @@ import '@fontsource-variable/jetbrains-mono';
 import 'katex/dist/katex.min.css';
 import './styles/global.css';
 import './styles/scenes.css';
+import './styles/about.css';
 import { App } from './App';
 
 createRoot(document.getElementById('root')!).render(

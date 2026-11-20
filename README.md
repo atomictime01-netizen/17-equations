@@ -11,13 +11,13 @@ Seventeen interactive labs, from Pythagoras to Black–Scholes. Free, offline, o
 [![GitHub stars](https://img.shields.io/github/stars/atomictime01-netizen/17-equations?color=f5a524&labelColor=0e1116)](https://github.com/atomictime01-netizen/17-equations/stargazers)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/atomictime)
 
-[**Open the app**](https://17-equations.vercel.app/app/) · [Landing page](https://17-equations.vercel.app/) · [Pricing](https://17-equations.vercel.app/pricing.html)
+[**Open the app**](https://17-equations.vercel.app/)
 
 </div>
 
 <p align="center">
-  <img src="site/shots/universe.jpg" alt="The universe screen: a rotating Earth ringed by seventeen equation nodes" width="49%">
-  <img src="site/shots/experiment.jpg" alt="The Fourier transform lab with live controls and plots" width="49%">
+  <img src="docs/shots/universe.jpg" alt="The universe screen: a rotating Earth ringed by seventeen equation nodes" width="49%">
+  <img src="docs/shots/experiment.jpg" alt="The Fourier transform lab with live controls and plots" width="49%">
 </p>
 
 Every equation is a small laboratory driven by a real mathematical model: change a variable and the mathematics, the numbers and the picture respond together.
@@ -36,7 +36,7 @@ cd 17-equations && npm install
 npm run dev        # http://localhost:5173
 ```
 
-Other commands: `npm test` (model and content tests), `npm run build` (type-check + production build into `dist/`), `npm run preview`, `npm run offline` (build and serve with no connection), and `npm run site:build` (landing page + pricing + the app under `/app/`, into `site-dist/`).
+Other commands: `npm test` (model and content tests), `npm run build` (type-check + production build into `dist/`), `npm run preview`, and `npm run offline` (build and serve with no connection).
 
 No accounts, API keys or external services are needed.
 

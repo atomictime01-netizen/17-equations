@@ -19,14 +19,13 @@ npm run dev        # http://localhost:5173
 | `npm test` | Vitest suites for the mathematical models and the narrative content |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run build` | Type-check and production build of the app into `dist/` |
-| `npm run site:build` | Landing page + pricing + app under `/app/` into `site-dist/` |
 
 ## Where things live
 
 - `src/math/`: pure, tested models. New numerical code goes here with a test that checks it against an independent result.
 - `src/experiences/`: one lazy-loaded component per equation.
 - `src/data/equations.ts`: the narrative content. Keep historical claims hedged where credit is shared.
-- `site/`: the static landing and pricing pages (plain HTML and CSS, no build step).
+- `src/components/About.tsx`: the sections below the globe (what makes it different, pricing, FAQ).
 
 ## Pull requests
 

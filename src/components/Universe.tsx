@@ -9,6 +9,7 @@ import { mulberry32 } from '../math/rng';
 import { Rich, Tex } from './Tex';
 import { Segmented } from './Controls';
 import { Glyph } from './Glyph';
+import { About } from './About';
 
 export function Universe({ onEnter }: { onEnter: (id: string, x?: number, y?: number) => void }) {
   const mobile = useIsMobile();
@@ -49,82 +50,114 @@ export function Universe({ onEnter }: { onEnter: (id: string, x?: number, y?: nu
     </header>
   );
 
+  const tools = (
+    <div className={`uni-tools ${view === 'list' ? 'inflow' : ''}`}>
+      <Segmented
+        small
+        value={view}
+        onChange={setView}
+        options={[
+          { value: 'map', label: 'Globe' },
+          { value: 'list', label: 'List' },
+        ]}
+      />
+      {view === 'map' && (
+        <button type="button" className={`chip ${showLinks ? 'on' : ''}`} onClick={() => setShowLinks((s) => !s)} aria-pressed={showLinks}>
+          Relationship map
+        </button>
+      )}
+    </div>
+  );
+
+  const toAbout = () => {
+    const el = document.getElementById('about');
+    if (el) el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+  };
+
   return (
     <div className="universe">
       {view === 'map' ? (
-        <Constellation
-          hover={hover}
-          setHover={setHover}
-          selected={selected}
-          setSelected={setSelected}
-          showLinks={showLinks}
-          onEnter={onEnter}
-          reduced={reduced}
-          visited={visited}
-          favs={favs}
-          doneOf={doneOf}
-          setActiveLink={setActiveLink}
-        />
+        <section className="uni-stage" aria-label="The universe of equations">
+          <Constellation
+            hover={hover}
+            setHover={setHover}
+            selected={selected}
+            setSelected={setSelected}
+            showLinks={showLinks}
+            onEnter={onEnter}
+            reduced={reduced}
+            visited={visited}
+            favs={favs}
+            doneOf={doneOf}
+            setActiveLink={setActiveLink}
+          />
+          {head}
+          {tools}
+
+          {activeLink && !focusEq && (
+            <div className="uni-link-card">
+              <div className="ulc-pair">
+                <span style={{ color: EQ_BY_ID[activeLink.a].palette.a }}>{EQ_BY_ID[activeLink.a].name}</span>
+                <span className="ulc-dash" />
+                <span style={{ color: EQ_BY_ID[activeLink.b].palette.a }}>{EQ_BY_ID[activeLink.b].name}</span>
+              </div>
+              <p>
+                <Rich text={activeLink.why} />
+              </p>
+            </div>
+          )}
+
+          {focusEq ? (
+            <aside className="uni-card" style={{ ['--a' as string]: focusEq.palette.a, ['--b' as string]: focusEq.palette.b }} aria-live="polite">
+              <div className="uc-num">
+                {String(focusEq.num).padStart(2, '0')} · {focusEq.era}
+              </div>
+              <h2 className="uc-name">{focusEq.name}</h2>
+              <div className="uc-eq">
+                <Tex tex={focusEq.tex} display />
+              </div>
+              <p className="uc-short">{focusEq.short}</p>
+              <div className="uc-links">
+                {focusEq.connections.map((c) => (
+                  <span key={c.to} className="uc-link" style={{ ['--la' as string]: EQ_BY_ID[c.to].palette.a }}>
+                    {EQ_BY_ID[c.to].name}
+                  </span>
+                ))}
+              </div>
+              <div className="uc-foot">
+                <span className="uc-prog">
+                  {doneOf(focusEq)}/{focusEq.challenges.length} experiments
+                </span>
+              </div>
+            </aside>
+          ) : (
+            !activeLink && (
+              <button type="button" className="uni-scrollcue" onClick={toAbout}>
+                <span>How it works</span>
+                <svg viewBox="0 0 24 24" aria-hidden>
+                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            )
+          )}
+        </section>
       ) : (
-        <ListView onEnter={onEnter} visited={visited} doneOf={doneOf} favs={favs} head={head} />
+        <>
+          <ListView
+            onEnter={onEnter}
+            visited={visited}
+            doneOf={doneOf}
+            favs={favs}
+            head={
+              <>
+                {head}
+                <div className="uni-tools-row">{tools}</div>
+              </>
+            }
+          />
+        </>
       )}
-
-      {view === 'map' && head}
-
-      <div className="uni-tools">
-        <Segmented
-          small
-          value={view}
-          onChange={setView}
-          options={[
-            { value: 'map', label: 'Globe' },
-            { value: 'list', label: 'List' },
-          ]}
-        />
-        {view === 'map' && (
-          <button type="button" className={`chip ${showLinks ? 'on' : ''}`} onClick={() => setShowLinks((s) => !s)} aria-pressed={showLinks}>
-            Relationship map
-          </button>
-        )}
-      </div>
-
-      {view === 'map' && activeLink && !focusEq && (
-        <div className="uni-link-card">
-          <div className="ulc-pair">
-            <span style={{ color: EQ_BY_ID[activeLink.a].palette.a }}>{EQ_BY_ID[activeLink.a].name}</span>
-            <span className="ulc-dash" />
-            <span style={{ color: EQ_BY_ID[activeLink.b].palette.a }}>{EQ_BY_ID[activeLink.b].name}</span>
-          </div>
-          <p>
-            <Rich text={activeLink.why} />
-          </p>
-        </div>
-      )}
-
-      {view === 'map' && focusEq && (
-        <aside className="uni-card" style={{ ['--a' as string]: focusEq.palette.a, ['--b' as string]: focusEq.palette.b }} aria-live="polite">
-          <div className="uc-num">
-            {String(focusEq.num).padStart(2, '0')} · {focusEq.era}
-          </div>
-          <h2 className="uc-name">{focusEq.name}</h2>
-          <div className="uc-eq">
-            <Tex tex={focusEq.tex} display />
-          </div>
-          <p className="uc-short">{focusEq.short}</p>
-          <div className="uc-links">
-            {focusEq.connections.map((c) => (
-              <span key={c.to} className="uc-link" style={{ ['--la' as string]: EQ_BY_ID[c.to].palette.a }}>
-                {EQ_BY_ID[c.to].name}
-              </span>
-            ))}
-          </div>
-          <div className="uc-foot">
-            <span className="uc-prog">
-              {doneOf(focusEq)}/{focusEq.challenges.length} experiments
-            </span>
-          </div>
-        </aside>
-      )}
+      <About />
     </div>
   );
 }
@@ -217,7 +250,15 @@ function Constellation(props: {
     };
     // re-fit on resize until the visitor zooms by hand
     let userZoomed = false;
+    // The page scrolls past the globe into the About sections, so the wheel only zooms while
+    // the page is at the top. Zoomed fully out, scrolling down hands over to the page.
+    // Pinch-zoom (ctrl+wheel on trackpads) always zooms.
+    const scroller = wrap.closest('.universe') as HTMLElement | null;
     const onWheelZoom = (e: WheelEvent) => {
+      if (!e.ctrlKey) {
+        if (scroller && scroller.scrollTop > 0) return;
+        if (e.deltaY > 0 && camTarget >= fitDistance() - 1e-3) return;
+      }
       e.preventDefault();
       userZoomed = true;
       //camTarget = Math.min(14, Math.max(3.2, camTarget * Math.exp(e.deltaY * 0.0011)));
