@@ -11,7 +11,7 @@ Seventeen interactive labs, from Pythagoras to Black–Scholes. Free, offline, o
 [![GitHub stars](https://img.shields.io/github/stars/atomictime01-netizen/17-equations?color=f5a524&labelColor=0e1116)](https://github.com/atomictime01-netizen/17-equations/stargazers)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/atomictime)
 
-[**Open the app**](https://atomictime01-netizen.github.io/17-equations/app/) · [Landing page](https://atomictime01-netizen.github.io/17-equations/) · [Pricing](https://atomictime01-netizen.github.io/17-equations/pricing.html)
+[**Open the app**](https://17-equations.vercel.app/app/) · [Landing page](https://17-equations.vercel.app/) · [Pricing](https://17-equations.vercel.app/pricing.html)
 
 </div>
 

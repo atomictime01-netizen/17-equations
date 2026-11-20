@@ -7,7 +7,7 @@ All notable changes to this project are documented here. The format follows
 ## [Unreleased]
 
 ### Added
-- Landing page and pricing page (`site/`), deployed to GitHub Pages with the app under `/app/`.
+- Landing page and pricing page (`site/`), deployed on Vercel with the app under `/app/` (`vercel.json`).
 - `npm run site:build` to assemble the deployable site.
 - MIT `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, issue and pull request templates, CI workflow.
 

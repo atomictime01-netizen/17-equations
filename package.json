@@ -44,7 +44,7 @@
     "type": "git",
     "url": "git+https://github.com/atomictime01-netizen/17-equations.git"
   },
-  "homepage": "https://atomictime01-netizen.github.io/17-equations/",
+  "homepage": "https://17-equations.vercel.app/",
   "bugs": {
     "url": "https://github.com/atomictime01-netizen/17-equations/issues"
   },
