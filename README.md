@@ -1,20 +1,43 @@
+<div align="center">
+
 # 17 Equations That Changed the World
 
-An immersive, interactive journey through seventeen equations — from Pythagoras to Black–Scholes. Every equation is a small laboratory driven by a real mathematical model: change a variable and the mathematics, the numbers and the picture respond together.
+**Change one variable in an equation and watch the world move.**
 
-<img width="1503" height="808" alt="Screenshot 2026-11-06 142437" src="https://github.com/user-attachments/assets/2ccb3563-115f-40b1-9ace-280c47ddb1b1" />
-<img width="1900" height="845" alt="Screenshot 2026-11-06 142614" src="https://github.com/user-attachments/assets/36d12cf7-f202-4740-a5d8-61a4c799f4c2" />
+Seventeen interactive labs, from Pythagoras to Black–Scholes. Free, offline, open source.
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-0e1116)](LICENSE)
+[![CI](https://github.com/atomictime01-netizen/17-equations/actions/workflows/ci.yml/badge.svg)](https://github.com/atomictime01-netizen/17-equations/actions/workflows/ci.yml)
+[![GitHub stars](https://img.shields.io/github/stars/atomictime01-netizen/17-equations?color=f5a524&labelColor=0e1116)](https://github.com/atomictime01-netizen/17-equations/stargazers)
+<!-- TODO: replace YOUR_HANDLE with the Buy Me a Coffee username -->
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/YOUR_HANDLE)
 
-## Running it
+[**Open the app**](https://atomictime01-netizen.github.io/17-equations/app/) · [Landing page](https://atomictime01-netizen.github.io/17-equations/) · [Pricing](https://atomictime01-netizen.github.io/17-equations/pricing.html)
+
+</div>
+
+<p align="center">
+  <img src="site/shots/universe.jpg" alt="The universe screen: a rotating Earth ringed by seventeen equation nodes" width="49%">
+  <img src="site/shots/experiment.jpg" alt="The Fourier transform lab with live controls and plots" width="49%">
+</p>
+
+Every equation is a small laboratory driven by a real mathematical model: change a variable and the mathematics, the numbers and the picture respond together.
+
+## Why it is different
+
+- **The solvers are real, and tested.** Navier–Stokes runs a 2-D fluid solver in a Web Worker, the wave equation is stepped with a Courant-safe time step, and the FFT is checked against a direct DFT. 35 automated tests compare the models with independent results.
+- **Nothing leaves your browser.** No account, no API keys, no network calls at run time. Fonts, KaTeX, Three.js and the map data are bundled, and a service worker makes it work offline after the first visit.
+- **The experiments notice what you did.** Guided experiments detect when you have actually done them, or switch to discovery mode and wander. Every simulation states its simplifications under *Limits & caveats*.
+
+## Quickstart
 
 ```bash
-npm install
+git clone https://github.com/atomictime01-netizen/17-equations.git
+cd 17-equations && npm install
 npm run dev        # http://localhost:5173
-npm test           # unit tests for the mathematical models and content
-npm run build      # type-check + production build into dist/
-npm run preview    # serve the production build
 ```
+
+Other commands: `npm test` (model and content tests), `npm run build` (type-check + production build into `dist/`), `npm run preview`, `npm run offline` (build and serve with no connection), and `npm run site:build` (landing page + pricing + the app under `/app/`, into `site-dist/`).
 
 No accounts, API keys or external services are needed.
 
@@ -78,3 +101,17 @@ src/
 ## Tests
 
 `npm test` runs Vitest suites that check the models against independent results — e.g. FFT vs direct DFT and Parseval's theorem, Black–Scholes textbook prices, put–call parity and the PDE solver, infinite-well and harmonic-oscillator energies, logistic-map periods and Lyapunov exponents, Gauss/Ampère/Faraday integrals, Yee wave speed, χ for every solid and surgery, fluid incompressibility, wave-energy conservation, Kepler's one-year orbit — plus integrity checks on the narrative content.
+
+## Contributing
+
+Bug reports, fixes, clearer explanations and new experiments are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for setup and PR rules, and follow the [Code of Conduct](CODE_OF_CONDUCT.md). Report security issues privately, as described in [SECURITY.md](SECURITY.md). The history of changes is in [CHANGELOG.md](CHANGELOG.md).
+
+## Support
+
+17 Equations is free and stays free. If it taught you something, you can [buy me a coffee](https://buymeacoffee.com/YOUR_HANDLE), or just star the repo and share it with a teacher.
+
+## License
+
+[MIT](LICENSE) © 2026 atomictime01-netizen. General information, not legal advice.
+
+Third-party code and assets keep their own licences, all permissive: React, Three.js and KaTeX (MIT); d3-geo, topojson-client and world-atlas (ISC; the map is derived from Natural Earth, which is public domain); and the Inter, JetBrains Mono and Instrument Serif fonts (SIL Open Font License 1.1). Run `npm ls --all` for the full dependency tree.
