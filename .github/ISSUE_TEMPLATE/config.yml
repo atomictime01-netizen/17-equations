@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security issue
+    url: https://github.com/atomictime01-netizen/17-equations/security/advisories/new
+    about: Please report vulnerabilities privately.
